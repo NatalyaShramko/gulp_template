@@ -1,0 +1,22 @@
+{
+  "name": "my_gulp_template",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Natalya"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2"
+  }
+}
