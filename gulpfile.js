@@ -61,7 +61,11 @@ gulp.task('watch',function() {
 gulp.task('default',['server','watch']);
 
 //build
-gulp.task('images', function() {
+gulp.task('cleanImg', function(cb) {
+    rimraf(path.build.img, cb);
+});
+
+gulp.task('images', ['cleanImg'], function() {
     return gulp.src(path.src.img)
     .pipe(imagemin({
         progressive: true,
@@ -81,8 +85,4 @@ gulp.task('build', ['images','fonts'], function() {
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', cleanCSS()))
     .pipe(gulp.dest(path.build.all))
-});
-
-gulp.task('clean', function(cb) {
-    rimraf(path.build.all, cb);
 });
